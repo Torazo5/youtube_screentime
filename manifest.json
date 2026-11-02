@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "Screen Time Tracker",
+  "version": "1.0",
+  "description": "Tracks how long you're active on your laptop and which sites you use. Data stays on this device.",
+  "permissions": ["alarms", "declarativeNetRequest", "idle", "storage", "tabs"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_popup": "popup.html", "default_title": "Screen time" }
+}

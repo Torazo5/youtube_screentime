@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { color-scheme: light dark; }
+  body { width: 300px; margin: 0; padding: 16px; font: 13px system-ui, sans-serif; }
+  h1 { font-size: 32px; margin: 0; font-variant-numeric: tabular-nums; }
+  h2 { font-size: 12px; margin: 16px 0 6px; opacity: .65; font-weight: 600; }
+  p { margin: 2px 0 0; opacity: .65; }
+  #sites { max-height: 240px; overflow-y: auto; }
+  .row { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; margin-bottom: 6px; }
+  .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .time { font-variant-numeric: tabular-nums; }
+  .bar { grid-column: 1 / -1; height: 4px; border-radius: 2px; background: #4c7dff; }
+  form, .blocked-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+  input { flex: 1; min-width: 0; font: inherit; padding: 4px 6px; }
+  button { font: inherit; }
+  #yt-override { margin-top: 6px; }
+  .blocked-row .name { flex: 1; }
+</style>
+</head>
+<body>
+  <h1 id="total"></h1>
+  <p id="summary"></p>
+  <h2>YouTube limit</h2>
+  <p id="yt-status"></p>
+  <button id="yt-override" hidden>Override</button>
+  <h2>Sites today</h2>
+  <div id="sites"></div>
+  <h2>Last 7 days</h2>
+  <div id="week"></div>
+  <h2>Blocked sites</h2>
+  <form id="block-form">
+    <input id="block-input" placeholder="youtube.com" aria-label="Site to block">
+    <button>Block</button>
+  </form>
+  <p id="block-error" role="alert"></p>
+  <div id="blocked"></div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
